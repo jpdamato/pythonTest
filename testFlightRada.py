@@ -84,7 +84,7 @@ zone = fr_api.get_zones()[zoneS]
 boundsZ = fr_api.get_bounds(zone)
 
 
-for i in range(1,100):
+for i in range(1,1000):
     flights = fr_api.get_flights(bounds = boundsZ)
 
     ddbb.insertFlightsIntoTable(flights)
@@ -97,19 +97,19 @@ for i in range(1,100):
             multi_writer.writerow(accumRow)
     for j in range(1,150):
         print('.', end='')
-        time.sleep(3)
+        time.sleep(4)
 
 #end for
 
-x,y,s = extractLatLon(flights)
+#x,y,s = extractLatLon(flights)
 
-fig, ax = plt.subplots()
-ax.scatter(x, y)
+#fig, ax = plt.subplots()
+#ax.scatter(x, y)
 
-for i, txt in enumerate(s):
-    ax.annotate(txt, (x[i], y[i]))
+#for i, txt in enumerate(s):
+#    ax.annotate(txt, (x[i], y[i]))
 
-plt.show()
+#plt.show()
 
-    
-input()
+print('FINISHED')  
+#input()
