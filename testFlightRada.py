@@ -84,7 +84,7 @@ zone = fr_api.get_zones()[zoneS]
 boundsZ = fr_api.get_bounds(zone)
 
 
-for i in range(1,1000):
+for i in range(1,2000):
     flights = fr_api.get_flights(bounds = boundsZ)
 
     ddbb.insertFlightsIntoTable(flights)
@@ -97,7 +97,7 @@ for i in range(1,1000):
             multi_writer.writerow(accumRow)
     for j in range(1,150):
         print('.', end='')
-        time.sleep(4)
+        time.sleep(2)
 
 #end for
 
