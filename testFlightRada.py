@@ -88,14 +88,16 @@ for i in range(1,100):
     flights = fr_api.get_flights(bounds = boundsZ)
 
     ddbb.insertFlightsIntoTable(flights)
-
+    print(' new query ... ')
     for airf in flights:
       ##  print(airf)  
         accumRow =[airf.longitude,airf.latitude,airf.aircraft_code]  
         with open('flights.csv', mode='a') as multi_file:
             multi_writer = csv.writer(multi_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             multi_writer.writerow(accumRow)
-    time.sleep(10)
+    for j in range(1,100):
+        print('.', end='')
+        time.sleep(1)
 
 #end for
 
