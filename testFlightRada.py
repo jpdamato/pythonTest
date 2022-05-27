@@ -95,9 +95,9 @@ for i in range(1,100):
         with open('flights.csv', mode='a') as multi_file:
             multi_writer = csv.writer(multi_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             multi_writer.writerow(accumRow)
-    for j in range(1,100):
+    for j in range(1,150):
         print('.', end='')
-        time.sleep(1)
+        time.sleep(3)
 
 #end for
 
